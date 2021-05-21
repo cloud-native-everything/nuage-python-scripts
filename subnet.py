@@ -28,10 +28,10 @@ mydomain = csprootSession.domains.get_first(filter="name == " + "'" + args.domai
 
 
 ## List subnets
-if args.operation == "list" :
+if args.operation == "subnetlist" :
     mysubnets = mydomain.subnets.get()
     for temp in mysubnets:
-        print (temp.name)
+        print (temp.name + " ID:" + temp.id)
 #..
 
 if args.operation == "zonecreate" :
