@@ -13,6 +13,7 @@ parser.add_argument('-z', '--zone', type=str, help="Zone name" )
 parser.add_argument('-a', '--address', type=str, help="IP Address and Mask" )
 parser.add_argument('-g', '--gateway', type=str, help="IP Gateway of the subnet" )
 parser.add_argument('-n', '--netmask', type=str, help="IP Netmask of the subnet" )
+parser.add_argument('-x', '--description', type=str, help="Description of the Subnet" )
 #parser.add_argument('-d', '--domain', type=str, help="Domain Name" )
 args = parser.parse_args()
 
@@ -42,7 +43,7 @@ if args.operation == "zonecreate" :
 
 if args.operation == "subnetcreate" :
     myzone = csprootSession.zones.get_first(filter="name == " + "'" + args.zone + "'")
-    mysubnet = vspk.NUSubnet(name=args.subnet, address=args.address, netmask=args.netmask, gateway=args.gateway)
+    mysubnet = vspk.NUSubnet(name=args.subnet, address=args.address, netmask=args.netmask, gateway=args.gateway, description=args.description)
     myzone.create_child(mysubnet)
     print (mysubnet)
   
