@@ -1,11 +1,11 @@
-#Some guidelines
+# Some guidelines
 
 You can use python <<app.py>> --help any time to see the arguments
  
 Remember to change the connection data in every file. I would try to do a global file later for the connection info.
 session = vspk.NUVSDSession(username=u'csproot', password=u'csproot', enterprise=u'csp', api_url=u'https://10.5.0.211:8443')
 
-##Routing Policies
+## Routing Policies
 List policies in the Enterprise
 ```
 [stack@undercloud docker-python]$ python rpolicy.py list -e OpenStack_default
@@ -25,7 +25,7 @@ test_in ID:84ae54cc-ba66-11eb-b895-fd0d453f0957
 (blob.xml is a file, you can see an example in the github repo, you can change it an update it thru this command line)
 
  
-##Create Subnet and Zone
+## Create Subnet and Zone
  
 List Subnets
 ```
