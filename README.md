@@ -1,9 +1,16 @@
-# Some guidelines
+# Get Started
 
-You can use python <<app.py>> --help any time to see the arguments
- 
-Remember to change the connection data in every file. I would try to do a global file later for the connection info.
-session = vspk.NUVSDSession(username=u'csproot', password=u'csproot', enterprise=u'csp', api_url=u'https://10.5.0.211:8443')
+You can install vspk directly in your system or use this Dockerfile to build your image and use those scripts in the container.
+To build the container:
+
+```
+git clone https://github.com/cloud-native-everything/nuage-python-scripts
+cd nuage-python-scripts/
+sudo docker build -t cne:v0.1 .
+## It can take a while
+sudo sudo docker run -ti -d cne:v0.1 --name nuage01 /bin/bash
+```
+
 
 ## Routing Policies
 List policies in the Enterprise
@@ -49,3 +56,12 @@ Create a subnet
 [stack@undercloud docker-python]$ python subnet.py subnetcreate -d vsd_managed_01 -z zonetest01 -s subnet002 -a 192.168.253.0 -n 255.255.255.0 -g 192.168.253.1 -x "this is a test"
 <class 'vspk.v6.nusubnet.NUSubnet'> (ID=86f23373-ba72-11eb-b895-83058a8b5958)
 ```
+
+# Some additional guidelines
+
+You can use python <<app.py>> --help any time to see the arguments
+ 
+Remember to change the connection data in every file. I would try to do a global file later for the connection info.
+session = vspk.NUVSDSession(username=u'csproot', password=u'csproot', enterprise=u'csp', api_url=u'https://10.5.0.211:8443')
+
+Visit my site https://www.cloud-native-everything.com/ or help us promoting
